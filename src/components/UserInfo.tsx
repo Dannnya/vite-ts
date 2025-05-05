@@ -12,6 +12,7 @@ export const UserInfo: React.FC<UserInfoProp> = ({ user }) => {
             <p>ID: {user.id}</p>
             <p>Name: {user.name}</p>
             <p>Email: {user.email}</p>
+            <p>qweqweqweqweqwqweqw</p>
         </div>
     )
 };
