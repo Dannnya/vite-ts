@@ -2,7 +2,7 @@ type User = {
     name: string;
     age: number;
     isStudent: boolean;
-}
+};
 
 export const User = ({ name, age, isStudent }: User) => {
     return (
