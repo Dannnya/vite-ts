@@ -5,14 +5,13 @@ type UserInfoProp = {
     user: Info;
 }
 
-export const UserInfo: React.FC<UserInfoProp> = ({ user }) => {
+export const UserInfo: React.FC<UserInfoProp> = ({ user: { id, name, email } }) => {
     return (
         <div>
             <h3>User Information</h3>
-            <p>ID: {user.id}</p>
-            <p>Name: {user.name}</p>
-            <p>Email: {user.email}</p>
-            <p>qweqweqweqweqwqweqw</p>
+            <p>ID: { id }</p>
+            <p>Name: { name }</p>
+            <p>Email: { email }</p>
         </div>
     )
 };

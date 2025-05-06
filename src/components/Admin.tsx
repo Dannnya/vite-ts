@@ -6,15 +6,15 @@ type AdminInfoProps = {
 }
 
 
-export const Admin: React.FC<AdminInfoProps> = ({ admin }) => {
+export const Admin: React.FC<AdminInfoProps> = ({ admin: { id, name, email, role, lastLogin } }) => {
     return (
         <div>
             <h3>Admin Information</h3>
-            <p>ID: {admin.id}</p>
-            <p>Name: {admin.name}</p>
-            <p>Email: {admin.email}</p>
-            <p>Role: {admin.role}</p>
-            <p>lastLogin: {admin.lastLogin.toLocaleTimeString()}</p>
+            <p>ID: { id }</p>
+            <p>Name: { name }</p>
+            <p>Email: { email }</p>
+            <p>Role: { role }</p>
+            <p>lastLogin: { lastLogin.toLocaleTimeString() }</p>
         </div>
     )
 };
