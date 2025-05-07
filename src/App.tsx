@@ -1,9 +1,12 @@
-// import './App.css';
 import { User } from './components/User';
 import { Button } from './components/Button';
 import { UserInfo } from './components/UserInfo';
 import { Admin } from './components/Admin';
+import { Counter } from './components/Counter';
 import type { Info, AdminInfo } from './types';
+import { Todo } from './components/Todo';
+import { Form } from './components/Form';
+// import './App.css';
 
 function App() {
   const user: Info = {
@@ -25,7 +28,12 @@ function App() {
       <User name='qwe' age={1000} isStudent={true} />
       <Button label='click' onClick={() => console.log('Clicked')} disabled={false} />
       <UserInfo user={ user } />
-      <Admin admin={ admin } />
+      <Admin admin={admin} />
+      <Counter />
+
+      <Todo />
+
+      <Form />
     </div>
   )
 };
