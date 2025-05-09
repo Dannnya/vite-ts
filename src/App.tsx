@@ -6,6 +6,7 @@ import { Counter } from './components/Counter';
 import type { Info, AdminInfo } from './types';
 import { Todo } from './components/Todo';
 import { Form } from './components/Form';
+import { CounterComponent } from './components/CounterComponent';
 // import './App.css';
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
       <Todo />
 
       <Form />
+
+      <CounterComponent />
     </div>
   )
 };
