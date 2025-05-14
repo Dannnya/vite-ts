@@ -9,6 +9,7 @@ import { Form } from './components/Form';
 import { CounterComponent } from './components/CounterComponent';
 import { Fetch } from './components/Fetch';
 import { UserList } from './components/UserList';
+import { FormHook } from './components/FormHook';
 // import './App.css';
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
       <Fetch />
 
       <UserList />
+      <br/>
+      <FormHook />
     </div>
   )
 };
