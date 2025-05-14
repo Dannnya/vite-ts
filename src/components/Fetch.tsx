@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 type Product = {
     id: number;
@@ -30,24 +30,28 @@ export const Fetch = () => {
 
         fetchData();
     },[])
-
-    return (
-        <div>
-            {data ? (
+    return (<div>
+    {data ? (
+        (() => {
+            const { id, title, description, price, discountPercentage, rating, stock, brand, category, thumbnail, images } = data;
+            return (
                 <div>
-                   <p>id: { data.id }</p> 
-                   <p>title: { data.title }</p> 
-                   <p>description: { data.description }</p> 
-                   <p>price: { data.price }</p> 
-                   <p>discountPercentage: { data.discountPercentage }</p> 
-                   <p>rating: { data.rating }</p>
-                   <p>stock: { data.stock }</p>
-                   <p>brand: { data.brand }</p>
-                   <p>category: { data.category }</p>
-                   <p>thumbnail: { data.thumbnail }</p>
-                   <img src={ data.images } width={300} />
-               </div> 
-            ): (<p>Loading...</p>) }
-        </div>
-    )
+                    <p>id: {id}</p>
+                    <p>title: {title}</p>
+                    <p>description: {description}</p>
+                    <p>price: {price}</p>
+                    <p>discountPercentage: {discountPercentage}</p>
+                    <p>rating: {rating}</p>
+                    <p>stock: {stock}</p>
+                    <p>brand: {brand}</p>
+                    <p>category: {category}</p>
+                    <p>thumbnail: {thumbnail}</p>
+                    <img src={images} width={300} />
+                </div>
+            );
+        })()
+    ) : (
+        <p>Loading...</p>
+    )}
+</div>)
 };
