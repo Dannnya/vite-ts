@@ -7,6 +7,8 @@ import type { Info, AdminInfo } from './types';
 import { Todo } from './components/Todo';
 import { Form } from './components/Form';
 import { CounterComponent } from './components/CounterComponent';
+import { Fetch } from './components/Fetch';
+import { UserList } from './components/UserList';
 // import './App.css';
 
 function App() {
@@ -37,6 +39,10 @@ function App() {
       <Form />
 
       <CounterComponent />
+
+      <Fetch />
+
+      <UserList />
     </div>
   )
 };
