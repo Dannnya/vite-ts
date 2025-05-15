@@ -10,6 +10,8 @@ import { CounterComponent } from './components/CounterComponent';
 import { Fetch } from './components/Fetch';
 import { UserList } from './components/UserList';
 import { FormHook } from './components/FormHook';
+import { FetchTodos } from './components/FetchTodos';
+import { Suspense } from 'react';
 // import './App.css';
 
 function App() {
@@ -46,6 +48,10 @@ function App() {
       <UserList />
       <br/>
       <FormHook />
+
+      <Suspense>
+        <FetchTodos />
+      </Suspense>
     </div>
   )
 };
