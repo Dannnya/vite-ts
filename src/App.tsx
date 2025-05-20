@@ -12,6 +12,8 @@ import { UserList } from './components/UserList';
 import { FormHook } from './components/FormHook';
 import { FetchTodos } from './components/FetchTodos';
 import { Suspense } from 'react';
+import { Card } from './components/Card';
+import { ThemeProvider } from './components/Theme';
 // import './App.css';
 
 function App() {
@@ -52,6 +54,10 @@ function App() {
       <Suspense>
         <FetchTodos />
       </Suspense>
+
+      <ThemeProvider>
+        <Card />
+      </ThemeProvider>
     </div>
   )
 };
