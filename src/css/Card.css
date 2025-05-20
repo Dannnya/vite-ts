@@ -1,0 +1,43 @@
+.card {
+    width: 20rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card.light {
+    background-color: white;
+    color: black;
+}
+
+.card.dark {
+    background-color: #134e4a;
+    /* teal-900 */
+    color: white;
+}
+
+.card-title {
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.card-button {
+    padding: 0.5rem 1rem;
+    background-color: #2dd4bf;
+    /* teal-300 */
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #14b8a6;
+    /* darker teal */
+}
