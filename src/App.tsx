@@ -11,12 +11,30 @@ import { Fetch } from './components/Fetch';
 import { UserList } from './components/UserList';
 import { FormHook } from './components/FormHook';
 import { FetchTodos } from './components/FetchTodos';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { Card } from './components/Card';
 import { ThemeProvider } from './components/Theme';
+import { Home } from './components/UseTransitionHook/Home';
+import { Posts } from './components/UseTransitionHook/Posts';
+import { Contact } from './components/UseTransitionHook/Contact';
 // import './App.css';
 
 function App() {
+  const [activeTab, setActiveTab] = useState('home');
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'home':
+        return <Home />
+      case 'posts':
+        return <Posts />
+      case 'contact':
+        return <Contact />
+      default:
+        return <Home />
+    }
+  }
+
   const user: Info = {
     id: 1,
     name: 'qwe',
@@ -33,6 +51,15 @@ function App() {
 
   return (
     <div>
+
+      <div className='tabs'>
+        <button onClick={() => setActiveTab('home')}>Home</button>
+        <button onClick={() => setActiveTab('contact')}>Contact</button>
+        <button onClick={() => setActiveTab('posts')}>Posts</button>
+      </div>
+
+      <div>{renderContent()}</div>
+
       <User name='qwe' age={1000} isStudent={true} />
       <Button label='click' onClick={() => console.log('Clicked')} disabled={false} />
       <UserInfo user={ user } />
