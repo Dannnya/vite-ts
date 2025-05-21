@@ -11,7 +11,7 @@ import { Fetch } from './components/Fetch';
 import { UserList } from './components/UserList';
 import { FormHook } from './components/FormHook';
 import { FetchTodos } from './components/FetchTodos';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useTransition } from 'react';
 import { Card } from './components/Card';
 import { ThemeProvider } from './components/Theme';
 import { Home } from './components/UseTransitionHook/Home';
@@ -21,6 +21,7 @@ import { Contact } from './components/UseTransitionHook/Contact';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
+  const [ isPending, startTransition ] = useTransition();
 
   const renderContent = () => {
     switch (activeTab) {
@@ -33,6 +34,12 @@ function App() {
       default:
         return <Home />
     }
+  }
+
+  const handleTabChange = (tab: string) => {
+    startTransition(() => {
+      setActiveTab(tab)
+    })
   }
 
   const user: Info = {
@@ -53,11 +60,13 @@ function App() {
     <div>
 
       <div className='tabs'>
-        <button onClick={() => setActiveTab('home')}>Home</button>
-        <button onClick={() => setActiveTab('contact')}>Contact</button>
-        <button onClick={() => setActiveTab('posts')}>Posts</button>
+        <button onClick={() => handleTabChange('home')}>Home</button>
+        <button onClick={() => handleTabChange('contact')}>Contact</button>
+        <button onClick={() => handleTabChange('posts')}>Posts</button>
       </div>
-
+      
+      { isPending && <p>Loading...</p> }
+      
       <div>{renderContent()}</div>
 
       <User name='qwe' age={1000} isStudent={true} />
